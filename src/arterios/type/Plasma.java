@@ -21,7 +21,7 @@ import static mindustry.entities.bullet.*;
 public class Plasma extends UnlockableContent implements Senseable{
     //must be static and global so conduits don't conflict - DO NOT INTERACT WITH THESE IN MODS OR I WILL PERSONALLY YELL AT YOU
     public static final int animationFrames = 50;
-    public static float animationScalePlasma = 140f,
+    public static float animationScalePlasma = 140f;
 
     protected static final Rand rand = new Rand();
 
@@ -67,7 +67,7 @@ public class Plasma extends UnlockableContent implements Senseable{
         lightningLength = 25;
         lightningLengthRand = 0;
         lightningColor = Pal.lancerLaser;
-    }
+    };
 
     public Plasma(String name, Color color){
         super(name);
