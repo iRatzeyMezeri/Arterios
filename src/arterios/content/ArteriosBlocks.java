@@ -91,8 +91,8 @@ public class ArteriosBlocks {
         armor = 3;
       }};
     
-      tinWallLarge = new Wall("large-tin-wall"){{
-        requirements(Category.defense, with(ArteriosItems.tin, 6));
+      tinWallLarge = new Wall("tin-wall-large"){{
+        requirements(Category.defense, with(ArteriosItems.tin, 24));
         size = 2;
         researchCostMultiplier = 0.1f;
         health = 1280;
