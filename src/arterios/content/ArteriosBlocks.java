@@ -43,6 +43,8 @@ public class ArteriosBlocks {
       tealite, obsidian, obsidianMagmaI, obsidianMagmaII,
       // Walls
       tealiteWall, obsidianWall,
+    // Distribution
+    itemPassage, passageJunction, passageRouter,
     // Walls
     tinWall, tinWallLarge;
 
@@ -83,10 +85,36 @@ public class ArteriosBlocks {
         obsidianWall = new StaticWall("obsidian-wall"){{
             variants = 2;
         }};
+      // Distribution
+      itemPassage = new Duct("item-passage"){{
+            requirements(Category.distribution, with(ArteriosItems.cadmium, 1));
+            health = 90;
+            speed = 3f;
+            researchCost = with(ArteriosItems.cadmium, 5);
+        }};
+
+      passageRouter = new DuctRouter("passage-router"){{
+            requirements(Category.distribution, with(ArteriosItems.cadmium, 7));
+            health = 110;
+            speed = 3f;
+            regionRotated1 = 1;
+            solid = false;
+            researchCost = with(ArteriosItems.cadmium, 30);
+        }};
+
+      passageJunction = new Junction("passage-junction"){{
+            requirements(Category.distribution, with(ArteriosItems.cadmium, 4));
+            health = 110;
+            speed = 6f;
+            solid = false;
+            researchCost = with(ArteriosItems.cadmium, 30);
+            ((Conveyor) itemPassage).junctionReplacement = this;
+        }};
+      
       // Walls
       tinWall = new Wall("tin-wall"){{
         requirements(Category.defense, with(ArteriosItems.tin, 6));
-        researchCostMultiplier = 0.01f;
+        researchCost = with(ArteriosItems.tin, 50);
         health = 320;
         armor = 3;
       }};
@@ -94,7 +122,7 @@ public class ArteriosBlocks {
       tinWallLarge = new Wall("tin-wall-large"){{
         requirements(Category.defense, with(ArteriosItems.tin, 24));
         size = 2;
-        researchCostMultiplier = 0.1f;
+        researchCost = with(ArteriosItems.tin, 200);
         health = 1280;
         armor = 3;
       }};
