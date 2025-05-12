@@ -110,7 +110,7 @@ public class ArteriosBlocks {
             researchCost = with(ArteriosItems.cadmium, 30);
         }};
       
-            ((Conveyor) itemPassage).junctionReplacement = passageJunction;
+            ((Duct) itemPassage).junctionReplacement = passageJunction;
       
       // Walls
       tinWall = new Wall("tin-wall"){{
