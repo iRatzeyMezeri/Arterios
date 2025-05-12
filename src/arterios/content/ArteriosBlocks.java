@@ -108,7 +108,7 @@ public class ArteriosBlocks {
             speed = 6f;
             solid = false;
             researchCost = with(ArteriosItems.cadmium, 30);
-            ((Conveyor) itemPassage).junctionReplacement = this;
+            ((Conveyor) itemPassage).junctionReplacement = passageJunction;
         }};
       
       // Walls
