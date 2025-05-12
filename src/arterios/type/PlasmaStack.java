@@ -1,4 +1,4 @@
-package arterios.type;
+/*package arterios.type;
 
 import arc.struct.*;
 import mindustry.content.*;
@@ -16,7 +16,7 @@ public class PlasmadStack implements Comparable<PlasmaStack>{
     }
 
     /** serialization only*/
-    protected PlasmaStack(){
+   /* protected PlasmaStack(){
         //prevent nulls.
         plasma = Plasmas.geocharge;
     }
@@ -78,4 +78,4 @@ public class PlasmadStack implements Comparable<PlasmaStack>{
         ", amount=" + amount +
         '}';
     }
-}
+}*/
