@@ -17,7 +17,8 @@ public class ArteriosMod extends Mod{
 
     @Override
     public void loadContent(){
-        Log.info("Loading Arterios content.");
+        ArteriosItems.load();
+        ArteriosBlocks.load();
     }
 
 }
