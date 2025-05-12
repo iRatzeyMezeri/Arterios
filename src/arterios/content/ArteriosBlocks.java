@@ -40,7 +40,7 @@ public class ArteriosBlocks {
       // Ores
       wallTinOre, cadmiumOre,
       // Floors
-      tealite, obsidian, obsidianMagma1, obsidianMagma2,
+      tealite, obsidian, obsidianMagmaI, obsidianMagmaII,
       // Walls
       tealiteWall, obsidianWall,
     // Walls
@@ -66,12 +66,12 @@ public class ArteriosBlocks {
             variants = 4;
         }};
 
-        obsidianMagma1 = new Floor("obsidian-magma-1"){{
+        obsidianMagmaI = new Floor("obsidian-magma-i"){{
             variants = 2;
             attributes.set(Attribute.heat, 0.66f); 
         }};
       
-        obsidianMagma2 = new Floor("obsidian-magma-2"){{
+        obsidianMagmaII = new Floor("obsidian-magma-ii"){{
             variants = 2;
             attributes.set(Attribute.heat, 1f); 
         }};
