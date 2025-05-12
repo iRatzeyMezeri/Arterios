@@ -1,4 +1,4 @@
-package arterios.type;
+/*package arterios.type;
 
 import arc.graphics.*;
 import arc.graphics.g2d.*;
@@ -18,7 +18,7 @@ import arterios.ctype.*;
 import static mindustry.entities.bullet.*;
 
 /** A better name for this class would be "fluid", but it's too late for that. */
-public class Plasma extends UnlockableContent implements Senseable{
+/*public class Plasma extends UnlockableContent implements Senseable{
     //must be static and global so conduits don't conflict - DO NOT INTERACT WITH THESE IN MODS OR I WILL PERSONALLY YELL AT YOU
     public static final int animationFrames = 50;
     public static float animationScalePlasma = 140f;
@@ -54,7 +54,7 @@ public class Plasma extends UnlockableContent implements Senseable{
     /** If true, this plasma is hidden in most UI. */
     public boolean hidden;
     /** Projectile created by the plasma when leaking. */
-    public BulletType leakEffect = LightningBulletType(){
+   /* public BulletType leakEffect = LightningBulletType(){
         damage = 1f;
         speed = 0f;
         lifetime = 1;
@@ -72,10 +72,10 @@ public class Plasma extends UnlockableContent implements Senseable{
     public Plasma(String name, Color color){
         super(name);
         this.color = new Color(color);
-    }
+    }*/
 
     /** For modding only.*/
-    public Plasma(String name){
+    /*public Plasma(String name){
         this(name, new Color(Color.black));
     }
 
@@ -122,4 +122,4 @@ public class Plasma extends UnlockableContent implements Senseable{
     public ContentType getContentType(){
         return ContentType.plasma;
     }
-}
+}*/
