@@ -43,8 +43,8 @@ public class ArteriosBlocks {
       tealite, obsidian, obsidianMagmaI, obsidianMagmaII,
       // Walls
       tealiteWall, obsidianWall,
-    // Distribution
-    itemPassage, passageJunction, passageRouter,
+    // Turrets
+    jolt, kindle,
     // Walls
     tinWall, tinWallLarge;
 
@@ -85,32 +85,8 @@ public class ArteriosBlocks {
         obsidianWall = new StaticWall("obsidian-wall"){{
             variants = 2;
         }};
-      // Distribution
-      itemPassage = new Duct("item-passage"){{
-            requirements(Category.distribution, with(ArteriosItems.cadmium, 1));
-            health = 90;
-            speed = 3f;
-            researchCost = with(ArteriosItems.cadmium, 5);
-        }};
-
-      passageRouter = new DuctRouter("passage-router"){{
-            requirements(Category.distribution, with(ArteriosItems.cadmium, 7));
-            health = 110;
-            speed = 3f;
-            regionRotated1 = 1;
-            solid = false;
-            researchCost = with(ArteriosItems.cadmium, 30);
-        }};
-
-      passageJunction = new Junction("passage-junction"){{
-            requirements(Category.distribution, with(ArteriosItems.cadmium, 4));
-            health = 110;
-            speed = 6f;
-            solid = false;
-            researchCost = with(ArteriosItems.cadmium, 30);
-        }};
-      
-      ((Duct) itemPassage).junctionReplacement = passageJunction;
+      // Turrets
+      jolt = new ItemTurret("jolt"){{}};
       
       // Walls
       tinWall = new Wall("tin-wall"){{
