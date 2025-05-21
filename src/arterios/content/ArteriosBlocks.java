@@ -86,7 +86,33 @@ public class ArteriosBlocks {
             variants = 2;
         }};
       // Turrets
-      jolt = new ItemTurret("jolt"){{}};
+      jolt = new ItemTurret("jolt"){{
+          requirements(Category.turret, with(ArteriosItems.cadmium, 60, ArteriosItems.tin, 30, ArteriosItems.gunmetal, 30));
+          shootSound = Sounds.lasershoot;
+          drawer = new DrawTurret("cadmium-");
+          size = 2;
+          outlineColor = Color.valueOf("#100f13");
+          shootY = -2;
+          reload = 50f;
+          shootCone = 0;
+          scaledHealth = 140;
+          rotateSpeed = 4;
+          researchCostMultiplier = 0.05f;
+          targetUnderBlocks = false;
+          ammo(
+                  ArteriosItems.cadmium, new BasicBulletType(6.5f,20){{
+                      width = 6f;
+                      hitSize = 7f;
+                      height = 16f;
+                      pierceCap = 3;
+                      pierce = true;
+                      pierceBuilding = true;
+                      hitColor = backColor = trailColor = Color.valueOf("#865a87");
+
+                  }},
+          );
+
+      }};
       
       // Walls
       tinWall = new Wall("tin-wall"){{
