@@ -40,11 +40,13 @@ public class ArteriosBlocks {
       // Ores
       wallTinOre, cadmiumOre,
       // Floors
-      tealite, obsidian, obsidianMagmaI, obsidianMagmaII,
+      obsidianMagmaI, obsidianMagmaII, obsidian, tachylite, roughTachylite, sodalite, tealite, cassiterite, sphalerite, purpurite,
       // Walls
-      tealiteWall, obsidianWall,
+      obsidianWall, tachyliteWall, sodaliteWall, tealiteWall, cassiteriteWall, sphaleriteWall, purpuriteWall, geochargedObsidian, geochargedTachylite, geochargedSodalite, geochargedCassiterite, geochargedPurpurite,
+      // Boulders
+      obsidianBoulder, tachyliteBoulder, sodaliteBoulder, cassiteriteBoulder, purpuriteBoulder,
     // Turrets
-    jolt, kindle,
+    // jolt, kindle,
     // Walls
     tinWall, tinWallLarge;
 
@@ -60,33 +62,128 @@ public class ArteriosBlocks {
          variants = 3;
         }};
       
-        tealite = new Floor("tealite"){{
-            variants = 3;
-        }};
-      
-        obsidian = new Floor("obsidian"){{
-            variants = 4;
-        }};
-
         obsidianMagmaI = new Floor("obsidian-magma-i"){{
             variants = 2;
             attributes.set(Attribute.heat, 0.66f); 
         }};
       
         obsidianMagmaII = new Floor("obsidian-magma-ii"){{
-            variants = 2;
+            variants = 3;
             attributes.set(Attribute.heat, 1f); 
         }};
-
-        tealiteWall = new StaticWall("tealite-wall"){{
+      
+        obsidian = new Floor("obsidian"){{
+            variants = 4;
+        }};
+      
+        tachylite = new Floor("tachylite"){{
+            variants = 3;
+        }};
+      
+        roughTachylite = new Floor("rough-tachylite"){{
+            variants = 3;
+        }};
+      
+        sodalite = new Floor("sodalite"){{
+            variants = 3;
+        }};
+      
+        tealite = new Floor("tealite"){{
+            variants = 3;
+        }};
+      
+        cassiterite = new Floor("cassiterite"){{
+            variants = 4;
+        }};
+      
+        sphalerite = new Floor("sphalerite"){{
+            variants = 4;
+        }};
+      
+        purpurite = new Floor("purpurite"){{
             variants = 3;
         }};
       
         obsidianWall = new StaticWall("obsidian-wall"){{
             variants = 2;
         }};
+      
+        tachyliteWall = new StaticWall("tachylite-wall"){{
+            variants = 2;
+        }};
+      
+        sodaliteWall = new StaticWall("sodalite-wall"){{
+            variants = 2;
+        }};
+      
+        tealiteWall = new StaticWall("tealite-wall"){{
+            variants = 3;
+        }};
+      
+        cassiteriteWall = new StaticWall("cassiterite-wall"){{
+            variants = 3;
+        }};
+      
+        sphaleriteWall = new StaticWall("sphalerite-wall"){{
+            variants = 2;
+        }};
+      
+        purpuriteWall = new StaticWall("purpurite-wall"){{
+            variants = 2;
+        }};
+
+        geochargedObsidian = new StaticWall("geocharged-obsidian"){{
+            variants = 2;
+            attributes.set(Attribute.geocharge, 1f); 
+        }};
+
+        geochargedTachylite = new StaticWall("geocharged-tachylite"){{
+            variants = 2;
+            attributes.set(Attribute.geocharge, 1f); 
+        }};
+
+        geochargedSodalite = new StaticWall("geocharged-sodalite"){{
+            variants = 2;
+            attributes.set(Attribute.geocharge, 1f); 
+        }};
+
+        geochargedCassiterite = new StaticWall("geocharged-cassiterite"){{
+            variants = 2;
+            attributes.set(Attribute.geocharge, 1f); 
+        }};
+
+        geochargedPurpurite = new StaticWall("geocharged-purpurite"){{
+            variants = 2;
+            attributes.set(Attribute.geocharge, 1f); 
+        }};
+      
+        obsidianBoulder = new Prop("obsidian-boulder"){{
+            variants = 2;
+            obsidian.asFloor().decoration = this;
+        }};
+      
+        tachyliteBoulder = new Prop("tachylite-boulder"){{
+            variants = 2;
+            tachylite.asFloor().decoration = this;
+            roughTachylite.asFloor().decoration = this;
+        }};
+      
+        sodaliteBoulder = new Prop("sodalite-boulder"){{
+            variants = 2;
+            sodalite.asFloor().decoration = this;
+        }};
+      
+        cassiteriteBoulder = new Prop("cassiterite-boulder"){{
+            variants = 2;
+            cassiterite.asFloor().decoration = this;
+        }};
+      
+        purpuriteBoulder = new Prop("purpurite-boulder"){{
+            variants = 2;
+            purpurite.asFloor().decoration = this;
+        }};
       // Turrets
-      jolt = new ItemTurret("jolt"){{
+      /* jolt = new ItemTurret("jolt"){{
           requirements(Category.turret, with(ArteriosItems.cadmium, 60, ArteriosItems.tin, 30, ArteriosItems.gunmetal, 30));
           shootSound = Sounds.lasershoot;
           drawer = new DrawTurret("cadmium-");
@@ -112,7 +209,7 @@ public class ArteriosBlocks {
                   }},
           );
 
-      }};
+      }};**/
       
       // Walls
       tinWall = new Wall("tin-wall"){{
