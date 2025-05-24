@@ -134,27 +134,22 @@ public class ArteriosBlocks {
 
         geochargedObsidian = new StaticWall("geocharged-obsidian"){{
             variants = 2;
-            attributes.set(Attribute.geocharge, 1f); 
         }};
 
         geochargedTachylite = new StaticWall("geocharged-tachylite"){{
             variants = 2;
-            attributes.set(Attribute.geocharge, 1f); 
         }};
 
         geochargedSodalite = new StaticWall("geocharged-sodalite"){{
             variants = 2;
-            attributes.set(Attribute.geocharge, 1f); 
         }};
 
         geochargedCassiterite = new StaticWall("geocharged-cassiterite"){{
             variants = 2;
-            attributes.set(Attribute.geocharge, 1f); 
         }};
 
         geochargedPurpurite = new StaticWall("geocharged-purpurite"){{
             variants = 2;
-            attributes.set(Attribute.geocharge, 1f); 
         }};
       
         obsidianBoulder = new Prop("obsidian-boulder"){{
