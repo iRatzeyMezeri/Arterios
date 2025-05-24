@@ -7,4 +7,6 @@ public class ArteriosAttributes {
     public static void load(){
         Attribute.add("geocharge");
     }
+
+    public static void setAttributes(){}
 }
