@@ -160,27 +160,32 @@ public class ArteriosBlocks {
         obsidianBoulder = new Prop("obsidian-boulder"){{
             variants = 2;
             obsidian.asFloor().decoration = this;
+            breakSound = Sounds.rockBreak;
         }};
       
         tachyliteBoulder = new Prop("tachylite-boulder"){{
             variants = 2;
             tachylite.asFloor().decoration = this;
             roughTachylite.asFloor().decoration = this;
+            breakSound = Sounds.rockBreak;
         }};
       
         sodaliteBoulder = new Prop("sodalite-boulder"){{
             variants = 2;
             sodalite.asFloor().decoration = this;
+            breakSound = Sounds.rockBreak;
         }};
       
         cassiteriteBoulder = new Prop("cassiterite-boulder"){{
             variants = 2;
             cassiterite.asFloor().decoration = this;
+            breakSound = Sounds.rockBreak;
         }};
       
         purpuriteBoulder = new Prop("purpurite-boulder"){{
             variants = 2;
             purpurite.asFloor().decoration = this;
+            breakSound = Sounds.rockBreak;
         }};
       // Turrets
       /* jolt = new ItemTurret("jolt"){{
