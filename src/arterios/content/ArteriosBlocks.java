@@ -46,20 +46,20 @@ public class ArteriosBlocks {
       // Boulders
       obsidianBoulder, tachyliteBoulder, sodaliteBoulder, cassiteriteBoulder, purpuriteBoulder,
     // Turrets
-    // jolt, kindle,
+    jolt, kindle,
     // Walls
     tinWall, tinWallLarge;
 
   
-  public static void load(){
-      // Environment
+    public static void load(){
+         // Environment
         wallTinOre = new StaticWall("wall-tin-ore"){{
             itemDrop = ArteriosItems.tin;
             variants = 3;
         }};
 
         cadmiumOre = new OreBlock("cadmium-ore", ArteriosItems.cadmium){{
-         variants = 3;
+            variants = 3;
         }};
       
         obsidianMagmaI = new Floor("obsidian-magma-i"){{
@@ -182,49 +182,95 @@ public class ArteriosBlocks {
             purpurite.asFloor().decoration = this;
             breakSound = Sounds.rockBreak;
         }};
-      // Turrets
-      /* jolt = new ItemTurret("jolt"){{
-          requirements(Category.turret, with(ArteriosItems.cadmium, 60, ArteriosItems.tin, 30, ArteriosItems.gunmetal, 30));
-          shootSound = Sounds.lasershoot;
-          drawer = new DrawTurret("cadmium-");
-          size = 2;
-          outlineColor = Color.valueOf("#100f13");
-          shootY = -2;
-          reload = 50f;
-          shootCone = 0;
-          scaledHealth = 140;
-          rotateSpeed = 4;
-          researchCostMultiplier = 0.05f;
-          targetUnderBlocks = false;
-          ammo(
-                  ArteriosItems.cadmium, new BasicBulletType(6.5f,20){{
-                      width = 6f;
-                      hitSize = 7f;
-                      height = 16f;
-                      pierceCap = 3;
-                      pierce = true;
-                      pierceBuilding = true;
-                      hitColor = backColor = trailColor = Color.valueOf("#865a87");
 
-                  }},
-          );
+        // Turrets
+        jolt = new ItemTurret("jolt"){{
+            requirements(Category.turret, with(ArteriosItems.cadmium, 60, ArteriosItems.tin, 30, ArteriosItems.gunmetal, 30));
+            shootSound = Sounds.lasershoot;
+            size = 2;
+            outlineColor = Color.valueOf("#100f13");
+            shootY = 2;
+            reload = 50f;
+            scaledHealth = 140;
+            rotateSpeed = 4;
+            researchCostMultiplier = 0.05f;
+            targetUnderBlocks = false;
 
-      }};**/
+            shoot = new ShootBarrel(){{
+                barrels = new float[]{
+                        -3, 0, 0,
+                        3, 0, 0
+                };
+                shots = 2;
+                shotDelay = 0;
+            }};
+
+            ammo(
+                ArteriosItems.cadmium, new BasicBulletType(5f,20){{
+                    width = 6f;
+                    hitSize = 7f;
+                    height = 16f;
+                    pierceCap = 3;
+                    pierce = true;
+                    pierceBuilding = true;
+                    hitColor = backColor = trailColor = Color.valueOf("#aa7aaa");
+                    shootEffect = Fx.shootSmallColor.wrap(Color.valueOf("#aa7aaa"));
+                    frontColor = Color.white;
+
+                    intervalBullet = new LightningBulletType(){{
+                        damage = 5;
+                        lightningColor = Color.valueOf("#aa7aaa");
+                        lightningLength = 8;
+
+                        lightningType = new BulletType(0.0001f, 0f){{
+                            lifetime = Fx.lightning.lifetime;
+                            despawnEffect = Fx.none;
+                            status = StatusEffects.shocked;
+                            statusDuration = 10f;
+                            hittable = false;
+                            lightColor = Color.white;
+                        }};
+                    }};
+                    bulletInterval = 4f;
+                    intervalAngle = 180;
+                    intervalRandomSpread = 0;
+                }}
+            );
+
+            drawer = new DrawTurret("cadmium-"){{
+                parts.addAll(
+                        new RegionPart("-blade"){{
+                            progress = PartProgress.recoil;
+                            moveY = -3;
+                            mirror = true;
+                            turretShading = true;
+                            layerOffset = -0.01f;
+                        }},
+                        new RegionPart("-panel"){{
+                            progress = PartProgress.recoil;
+                            moveX = 0.5f;
+                            moveY = -0.5f;
+                            mirror = true;
+                            turretShading = true;
+                        }}
+                );
+            }};;
+        }};
       
-      // Walls
-      tinWall = new Wall("tin-wall"){{
-        requirements(Category.defense, with(ArteriosItems.tin, 6));
-        researchCost = with(ArteriosItems.tin, 50);
-        health = 320;
-        armor = 3;
-      }};
+        // Walls
+        tinWall = new Wall("tin-wall"){{
+            requirements(Category.defense, with(ArteriosItems.tin, 6));
+            researchCost = with(ArteriosItems.tin, 50);
+            health = 320;
+            armor = 3;
+        }};
     
-      tinWallLarge = new Wall("tin-wall-large"){{
-        requirements(Category.defense, with(ArteriosItems.tin, 24));
-        size = 2;
-        researchCost = with(ArteriosItems.tin, 200);
-        health = 1280;
-        armor = 3;
-      }};
+        tinWallLarge = new Wall("tin-wall-large"){{
+            requirements(Category.defense, with(ArteriosItems.tin, 24));
+            size = 2;
+            researchCost = with(ArteriosItems.tin, 200);
+            health = 1280;
+            armor = 3;
+        }};
     }
 }

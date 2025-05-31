@@ -18,10 +18,10 @@ public class ArteriosMod extends Mod{
 
     @Override
     public void loadContent(){
-        ArteriosBlocks.load();
-        ArteriosAttributes.load();
-        ArteriosAttributes.setAttributes();
         ArteriosItems.load();
+        ArteriosAttributes.load();
+        ArteriosBlocks.load();
+        ArteriosAttributes.setAttributes();
     }
 
 }
