@@ -220,7 +220,7 @@ public class ArteriosBlocks {
                     intervalBullet = new LightningBulletType(){{
                         damage = 5;
                         lightningColor = Color.valueOf("#aa7aaa");
-                        lightningLength = 4;
+                        lightningLength = 8;
 
                         lightningType = new BulletType(0.0001f, 0f){{
                             lifetime = Fx.lightning.lifetime;
