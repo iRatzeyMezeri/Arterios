@@ -45,6 +45,8 @@ public class ArteriosBlocks {
       obsidianWall, tachyliteWall, sodaliteWall, tealiteWall, cassiteriteWall, sphaleriteWall, purpuriteWall, geochargedObsidian, geochargedTachylite, geochargedSodalite, geochargedCassiterite, geochargedPurpurite,
       // Boulders
       obsidianBoulder, tachyliteBoulder, sodaliteBoulder, cassiteriteBoulder, purpuriteBoulder,
+      // Tall Blocks
+      crystalSodalite,
     // Turrets
     jolt, kindle,
     // Walls
@@ -181,6 +183,11 @@ public class ArteriosBlocks {
             variants = 2;
             purpurite.asFloor().decoration = this;
             breakSound = Sounds.rockBreak;
+        }};
+
+        crystalSodalite = new TallBlock("crystal-sodalite"){{
+            variants = 2;
+            clipSize = 128f;
         }};
 
         // Turrets
