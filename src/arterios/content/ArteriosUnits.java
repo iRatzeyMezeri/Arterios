@@ -5,12 +5,8 @@ import arterios.APal;
 import arterios.entities.bullet.UndergroundBulletType;
 import mindustry.ai.types.GroundAI;
 import mindustry.content.Fx;
-import mindustry.entities.bullet.BasicBulletType;
-import mindustry.entities.pattern.ShootHelix;
 import mindustry.gen.Sounds;
-import mindustry.gen.UnitEntity;
 import mindustry.gen.UnitWaterMove;
-import mindustry.graphics.Layer;
 import mindustry.type.UnitType;
 import mindustry.type.Weapon;
 
@@ -32,7 +28,7 @@ public class ArteriosUnits {
             rotateSpeed = 3.3f;
             faceTarget = true;
             naval = true;
-            outlineColor = APal.unitOutline;
+            outlineColor = APal.lightOutline;
             trailLength = 20;
             trailScl = 1.3f;
             waveTrailX = 2f;
