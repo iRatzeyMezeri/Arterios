@@ -195,7 +195,7 @@ public class ArteriosBlocks {
             requirements(Category.turret, with(ArteriosItems.cadmium, 60, ArteriosItems.tin, 30, ArteriosItems.gunmetal, 30));
             shootSound = Sounds.lasershoot;
             size = 2;
-            outlineColor = Color.valueOf("#100f13");
+            outlineColor = APal.turretOutline;
             shootY = 2;
             reload = 50f;
             scaledHealth = 140;
