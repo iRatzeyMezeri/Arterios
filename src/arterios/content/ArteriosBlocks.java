@@ -32,7 +32,9 @@ public class ArteriosBlocks {
     // Turrets
     jolt, kindle,
     // Walls
-    tinWall, tinWallLarge;
+    tinWall, tinWallLarge,
+    // Effect
+    coreCentury;
 
   
     public static void load(){
@@ -260,6 +262,21 @@ public class ArteriosBlocks {
             researchCost = with(ArteriosItems.tin, 200);
             health = 1280;
             armor = 3;
+        }};
+
+        // Effect
+        coreCentury = new CoreBlock("core-century"){{
+            requirements(Category.effect, with(ArteriosItems.cadmium, 1000, ArteriosItems.tin, 400, ArteriosItems.gunmetal, 200));
+            alwaysUnlocked = true;
+
+            isFirstTier = true;
+            health = 2400;
+            size = 4;
+            absorbLasers = true;
+            itemCapacity = 6000;
+            unitCapModifier = 10;
+            squareSprite = false;
+            unitType = UnitTypes.alpha;
         }};
     }
 }
