@@ -1,34 +1,16 @@
 package arterios.content;
 
 import arc.graphics.*;
-import arc.graphics.g2d.*;
-import arc.math.*;
-import arc.math.geom.*;
-import arc.struct.*;
 import mindustry.content.*;
-import mindustry.entities.*;
 import mindustry.entities.bullet.*;
-import mindustry.entities.effect.*;
 import mindustry.entities.part.*;
 import mindustry.entities.pattern.*;
 import mindustry.gen.*;
-import mindustry.graphics.*;
 import mindustry.type.*;
-import mindustry.type.unit.MissileUnitType;
 import mindustry.world.*;
 import mindustry.world.blocks.defense.*;
 import mindustry.world.blocks.defense.turrets.*;
-import mindustry.world.blocks.distribution.*;
 import mindustry.world.blocks.environment.*;
-import mindustry.world.blocks.heat.*;
-import mindustry.world.blocks.liquid.*;
-import mindustry.world.blocks.logic.*;
-import mindustry.world.blocks.payloads.*;
-import mindustry.world.blocks.power.*;
-import mindustry.world.blocks.production.*;
-import mindustry.world.blocks.storage.*;
-import mindustry.world.blocks.units.*;
-import mindustry.world.consumers.*;
 import mindustry.world.draw.*;
 import mindustry.world.meta.*;
 import static mindustry.type.ItemStack.*;
@@ -45,6 +27,8 @@ public class ArteriosBlocks {
       obsidianWall, tachyliteWall, sodaliteWall, tealiteWall, cassiteriteWall, sphaleriteWall, purpuriteWall, geochargedObsidian, geochargedTachylite, geochargedSodalite, geochargedCassiterite, geochargedPurpurite,
       // Boulders
       obsidianBoulder, tachyliteBoulder, sodaliteBoulder, cassiteriteBoulder, purpuriteBoulder,
+      // Tall Blocks
+      crystalSodalite,
     // Turrets
     jolt, kindle,
     // Walls
@@ -183,12 +167,17 @@ public class ArteriosBlocks {
             breakSound = Sounds.rockBreak;
         }};
 
+        crystalSodalite = new TallBlock("crystal-sodalite"){{
+            variants = 2;
+            clipSize = 128f;
+        }};
+
         // Turrets
         jolt = new ItemTurret("jolt"){{
             requirements(Category.turret, with(ArteriosItems.cadmium, 60, ArteriosItems.tin, 30, ArteriosItems.gunmetal, 30));
             shootSound = Sounds.lasershoot;
             size = 2;
-            outlineColor = Color.valueOf("#100f13");
+            outlineColor = APal.darkOutline;
             shootY = 2;
             reload = 50f;
             scaledHealth = 140;
