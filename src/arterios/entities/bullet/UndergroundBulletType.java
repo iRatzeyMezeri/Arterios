@@ -12,7 +12,6 @@ public class UndergroundBulletType extends BasicBulletType {
 
     Effect undergroundEffect = Fx.breakProp;
     float undergroundInterval = 5f;
-    float damageDecreasePercent = 0.6f;
 
     public UndergroundBulletType(float speed, float damage) {
         super(speed, damage);
@@ -32,13 +31,6 @@ public class UndergroundBulletType extends BasicBulletType {
         }else{
             super.draw(b);
         }
-    }
-
-
-
-    @Override
-    public float damageMultiplier(Bullet b) {
-        return super.damageMultiplier(b) * (isUnderground(b) ? damageDecreasePercent : 1f);
     }
 
     public boolean isUnderground(Bullet b){
