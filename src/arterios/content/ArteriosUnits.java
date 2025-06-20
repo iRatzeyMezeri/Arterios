@@ -2,7 +2,8 @@ package arterios.content;
 
 import arc.graphics.Color;
 import arterios.APal;
-import arterios.entities.bullet.UndergroundBulletType;
+import arterios.entities.bullet.*;
+import arterios.entities.part.*;
 import mindustry.ai.types.GroundAI;
 import mindustry.content.Fx;
 import mindustry.gen.Sounds;
@@ -12,8 +13,10 @@ import mindustry.type.Weapon;
 
 public class ArteriosUnits {
     public static UnitType
-
-    felix;
+    // Hover
+    cambru, ordovi, silur, devon, carbonifer,
+    // Naval
+    felix, lynx, silvester, leptail, namafelis;
 
     public static void load() {
         felix = new UnitType("felix"){{
@@ -35,6 +38,8 @@ public class ArteriosUnits {
 
             armor = 2f;
 
+            parts.addAll(new SillyPart("-bow"));
+
             weapons.addAll(
                     new Weapon("arterios-felix-weapon"){{
                         x = 2.5f;
@@ -53,7 +58,7 @@ public class ArteriosUnits {
                             ignoreRotation = true;
                             width = height = 8f;
                             shootEffect = smokeEffect = ejectEffect = Fx.none;
-                            backColor = hitColor = trailColor = APal.navalBullet;
+                            backColor = hitColor = trailColor = APal.navalGreen;
                             frontColor = mixColorTo = Color.white;
                             hitSound = Sounds.plasmaboom;
                             hitSize = 22f;
